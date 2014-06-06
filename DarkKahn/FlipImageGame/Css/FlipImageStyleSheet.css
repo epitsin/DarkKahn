@@ -1,2 +1,58 @@
-﻿body {
+﻿html, body, ul, ol, li, p,
+h1, h2, h3, h4, h5, h6,
+form, fieldset, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive;
+    color: #483d8b;
+    background-color: #def;
+    background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%), radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%);
+    background-size: 80px 80px;
+    background-position: 0 0, 40px 40px;
+}
+
+#wrapper {
+    margin: auto;
+    width: 680px;
+    text-align: center;
+}
+
+.menu > li {
+    list-style-type: none;
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    margin: 10px;
+    margin: 20px 0 40px 0;
+    background-color: #008080;
+    cursor: pointer;
+}
+
+.menu > li:hover {
+    background-color: #002020;
+}
+
+.column {
+    display: block;
+}
+
+.image {
+    display: inline-block;
+    border: 2px solid #008080;
+    width: 100px;
+    height: 140px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: hsl(34, 53%, 82%);
+    background-image: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px, hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px, hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px, hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px, hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 120px, hsla(197, 62%, 11%, 0.5) 120px, hsla(197, 62%, 11%, 0.5) 140px ), repeating-linear-gradient(135deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px, hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px, hsla(5, 53%, 63%, 0.5) 60px, hsla(5, 53%, 63%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 70px, hsla(35, 91%, 65%, 0.5) 80px, hsla(35, 91%, 65%, 0) 80px, hsla(35, 91%, 65%, 0) 90px, hsla(5, 53%, 63%, 0.5) 90px, hsla(5, 53%, 63%, 0.5) 110px, hsla(5, 53%, 63%, 0) 110px, hsla(5, 53%, 63%, 0) 140px, hsla(197, 62%, 11%, 0.5) 140px, hsla(197, 62%, 11%, 0.5) 160px );
+}
+
+.image:hover {
+    border: 2px solid #483d8b;
 }
