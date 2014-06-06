@@ -4,3 +4,9 @@ D:\Telerik\08. JavaScript UI & DOM\Team Dark Kahn\DarkKahn\FlipImageGame\bin\Fli
 D:\Telerik\08. JavaScript UI & DOM\Team Dark Kahn\DarkKahn\FlipImageGame\obj\Debug\FlipImageGame.csprojResolveAssemblyReference.cache
 D:\Telerik\08. JavaScript UI & DOM\Team Dark Kahn\DarkKahn\FlipImageGame\obj\Debug\FlipImageGame.dll
 D:\Telerik\08. JavaScript UI & DOM\Team Dark Kahn\DarkKahn\FlipImageGame\obj\Debug\FlipImageGame.pdb
+E:\Developer\GitHub Repository\DarkKahn\DarkKahn\FlipImageGame\bin\FlipImageGame.dll.config
+E:\Developer\GitHub Repository\DarkKahn\DarkKahn\FlipImageGame\bin\FlipImageGame.dll
+E:\Developer\GitHub Repository\DarkKahn\DarkKahn\FlipImageGame\bin\FlipImageGame.pdb
+E:\Developer\GitHub Repository\DarkKahn\DarkKahn\FlipImageGame\obj\Debug\FlipImageGame.csprojResolveAssemblyReference.cache
+E:\Developer\GitHub Repository\DarkKahn\DarkKahn\FlipImageGame\obj\Debug\FlipImageGame.dll
+E:\Developer\GitHub Repository\DarkKahn\DarkKahn\FlipImageGame\obj\Debug\FlipImageGame.pdb
