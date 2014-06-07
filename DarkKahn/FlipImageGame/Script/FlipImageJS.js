@@ -37,3 +37,5 @@ function clearFlipped() {
     flippedCardsUntilNow = [];
     flippedImagesUntilNow = [];
 }
+
+//test commit
