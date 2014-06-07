@@ -60,7 +60,7 @@ function shuffle(array) {
 
 function generateBoard() {
     flippedCardsCount = 0;
-    var numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10];
+    var numbers = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9];
     var shuffledNums = shuffle(numbers);
 
     for (var i = 0; i < shuffledNums.length; i++) {
@@ -69,7 +69,8 @@ function generateBoard() {
 }
 
 function assignPicsToDivs(randomNum, num) {
-    switch(randomNum){
+    switch (randomNum) {
+        case 0: drawZeroPic(num); break;
         case 1: drawFirstPic(num); break;
         case 2: drawSecondPic(num); break;
         case 3: drawThirdPic(num); break;
@@ -79,6 +80,65 @@ function assignPicsToDivs(randomNum, num) {
         case 7: drawSeventhPic(num); break;
         case 8: drawEighthPic(num); break;
         case 9: drawNinethPic(num); break;
-        case 10: drawTenthPic(num); break;
     }
+}
+
+function drawZeroPic(num) {
+    var canvas = document.getElementById(num);
+    var ctx = canvas.getContext('2d');
+
+}
+
+function drawFirstPic(num) {
+    var canvas = document.getElementById(num);
+    var ctx = canvas.getContext('2d');
+
+}
+
+function drawSecondPic(num) {
+    var canvas = document.getElementById(num);
+    var ctx = canvas.getContext('2d');
+
+}
+
+function drawThirdPic(num) {
+    var canvas = document.getElementById(num);
+    var ctx = canvas.getContext('2d');
+
+}
+
+function drawFourthPic(num) {
+    var canvas = document.getElementById(num);
+    var ctx = canvas.getContext('2d');
+
+}
+
+function drawFifthPic(num) {
+    var canvas = document.getElementById(num);
+    var ctx = canvas.getContext('2d');
+
+}
+
+function drawSixthPic(num) {
+    var canvas = document.getElementById(num);
+    var ctx = canvas.getContext('2d');
+
+}
+
+function drawSeventhPic(num) {
+    var canvas = document.getElementById(num);
+    var ctx = canvas.getContext('2d');
+
+}
+
+function drawEighthPic(num) {
+    var canvas = document.getElementById(num);
+    var ctx = canvas.getContext('2d');
+
+}
+
+function drawNinethPic(num) {
+    var canvas = document.getElementById(num);
+    var ctx = canvas.getContext('2d');
+
 }
