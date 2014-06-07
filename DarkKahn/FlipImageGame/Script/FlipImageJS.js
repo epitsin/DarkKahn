@@ -3,6 +3,7 @@ var flippedImagesUntilNow = []; // the array of images on flipped cards
 var flippedCardsUntilNow = []; // the array of flipped cards' ID-s
 var flippedCardsCount = 0; // all flipped cards until now 
 
+
 // the function is started when you click on a card
 function flipCard(currentCard, imageName) {
     currentCard.style.backgroundImage = 'url(images/' + imageName + '.jpg)';
@@ -63,6 +64,21 @@ function generateBoard() {
     var shuffledNums = shuffle(numbers);
 
     for (var i = 0; i < shuffledNums.length; i++) {
-        // append the shuffledNums[i]-th picture to the i-th div
+        assignPicsToDivs(shuffledNums[i], i);
+    }
+}
+
+function assignPicsToDivs(randomNum, num) {
+    switch(randomNum){
+        case 1: drawFirstPic(num); break;
+        case 2: drawSecondPic(num); break;
+        case 3: drawThirdPic(num); break;
+        case 4: drawFourthPic(num); break;
+        case 5: drawFifthPic(num); break;
+        case 6: drawSixthPic(num); break;
+        case 7: drawSeventhPic(num); break;
+        case 8: drawEighthPic(num); break;
+        case 9: drawNinethPic(num); break;
+        case 10: drawTenthPic(num); break;
     }
 }
