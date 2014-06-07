@@ -56,4 +56,13 @@ function shuffle(array) {
 
     return array;
 }
-//test commit
+
+function generateBoard() {
+    flippedCardsCount = 0;
+    var numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10];
+    var shuffledNums = shuffle(numbers);
+
+    for (var i = 0; i < shuffledNums.length; i++) {
+        // append the shuffledNums[i]-th picture to the i-th div
+    }
+}
