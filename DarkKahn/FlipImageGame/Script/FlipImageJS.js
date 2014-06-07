@@ -6,7 +6,7 @@ var flippedCardsCount = 0; // all flipped cards until now
 
 // the function is started when you click on a card
 function flipCard(currentCard, imageName) {
-    currentCard.style.backgroundImage = 'url(images/' + imageName + '.jpg)';
+    currentCard.style.backgroundImage = 'url(images/' + imageName + '.jpg)'; // TO DO: change it when we have pictures
     if (flippedImagesUntilNow.length === 0) {
         addNewCardToFlipped();
     } else if (flippedImagesUntilNow.length === 1) {
@@ -16,8 +16,8 @@ function flipCard(currentCard, imageName) {
             flippedCardsCount += 2;
             clearFlipped();
         } else {
-            flippedCardsUntilNow[0].style.backgroundImage = 'url(images/default.jpg)';
-            flippedCardsUntilNow[1].style.backgroundImage = 'url(images/default.jpg)';
+            flippedCardsUntilNow[0].style.backgroundImage = 'url(images/default.jpg)'; // TO DO: change it when we have pictures
+            flippedCardsUntilNow[1].style.backgroundImage = 'url(images/default.jpg)'; // TO DO: change it when we have pictures
             clearFlipped();
         }
 
@@ -58,6 +58,7 @@ function shuffle(array) {
     return array;
 }
 
+// generates the main board in the beginning of the game
 function generateBoard() {
     flippedCardsCount = 0;
     var numbers = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9];
@@ -68,6 +69,7 @@ function generateBoard() {
     }
 }
 
+// decides which pic to draw in the given div with id = num
 function assignPicsToDivs(randomNum, num) {
     switch (randomNum) {
         case 0: drawZeroPic(num); break;
@@ -87,17 +89,21 @@ function drawZeroPic(num) {
     var canvas = document.getElementById(num);
     var ctx = canvas.getContext('2d');
 
+    // TO DO...
 }
 
 function drawFirstPic(num) {
     var canvas = document.getElementById(num);
     var ctx = canvas.getContext('2d');
 
+    // TO DO...
 }
 
 function drawSecondPic(num) {
     var canvas = document.getElementById(num);
     var ctx = canvas.getContext('2d');
+
+    // TO DO...
 
 }
 
@@ -105,11 +111,15 @@ function drawThirdPic(num) {
     var canvas = document.getElementById(num);
     var ctx = canvas.getContext('2d');
 
+    // TO DO...
+
 }
 
 function drawFourthPic(num) {
     var canvas = document.getElementById(num);
     var ctx = canvas.getContext('2d');
+
+    // TO DO...
 
 }
 
@@ -117,11 +127,15 @@ function drawFifthPic(num) {
     var canvas = document.getElementById(num);
     var ctx = canvas.getContext('2d');
 
+    // TO DO...
+
 }
 
 function drawSixthPic(num) {
     var canvas = document.getElementById(num);
     var ctx = canvas.getContext('2d');
+
+    // TO DO...
 
 }
 
@@ -129,16 +143,22 @@ function drawSeventhPic(num) {
     var canvas = document.getElementById(num);
     var ctx = canvas.getContext('2d');
 
+    // TO DO...
+
 }
 
 function drawEighthPic(num) {
     var canvas = document.getElementById(num);
     var ctx = canvas.getContext('2d');
 
+    // TO DO...
+
 }
 
 function drawNinethPic(num) {
     var canvas = document.getElementById(num);
     var ctx = canvas.getContext('2d');
+
+    // TO DO...
 
 }
