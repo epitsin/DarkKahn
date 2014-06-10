@@ -9,12 +9,12 @@ function flipCard(currentCard, imageName) {
     //currentCard.style.backgroundImage = 'url(images/' + imageName + '.jpg)'; // TO DO: change it when we have pictures
     assignPicsToDivs(currentCard.className, currentCard.id);
 
-    if (flippedImagesUntilNow.length === 0) {
-        addNewCardToFlipped();
-    } else if (flippedImagesUntilNow.length === 1) {
-        addNewCardToFlipped();
+    if (flippedCardsUntilNow.length === 0) {
+        addNewCardToFlipped(currentCard);
+    } else if (flippedCardsUntilNow.length === 1) {
+        addNewCardToFlipped(currentCard);
 
-        if (flippedImagesUntilNow[0] === flippedImagesUntilNow[1]) {
+        if (flippedCardsUntilNow[0].className === flippedCardsUntilNow[1].className) {
             flippedCardsCount += 2;
             clearFlipped();
         } else {
@@ -30,7 +30,7 @@ function flipCard(currentCard, imageName) {
 }
 
 // adds a new card to the array of currently flipped cards and a new image to the array of currently flipped images
-function addNewCardToFlipped() {
+function addNewCardToFlipped(currentCard) {
     //flippedImagesUntilNow.push(image);
     flippedCardsUntilNow.push(currentCard);
 }
