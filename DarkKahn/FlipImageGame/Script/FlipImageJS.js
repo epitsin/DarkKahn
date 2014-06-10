@@ -6,7 +6,9 @@ var flippedCardsCount = 0; // all flipped cards until now
 
 // the function is started when you click on a card
 function flipCard(currentCard, imageName) {
-    currentCard.style.backgroundImage = 'url(images/' + imageName + '.jpg)'; // TO DO: change it when we have pictures
+    //currentCard.style.backgroundImage = 'url(images/' + imageName + '.jpg)'; // TO DO: change it when we have pictures
+    assignPicsToDivs(currentCard.className, currentCard.id);
+
     if (flippedImagesUntilNow.length === 0) {
         addNewCardToFlipped();
     } else if (flippedImagesUntilNow.length === 1) {
@@ -29,7 +31,7 @@ function flipCard(currentCard, imageName) {
 
 // adds a new card to the array of currently flipped cards and a new image to the array of currently flipped images
 function addNewCardToFlipped() {
-    flippedImagesUntilNow.push(image);
+    //flippedImagesUntilNow.push(image);
     flippedCardsUntilNow.push(currentCard);
 }
 
@@ -65,13 +67,17 @@ function generateBoard() {
     var shuffledNums = shuffle(numbers);
 
     for (var i = 0; i < shuffledNums.length; i++) {
-        assignPicsToDivs(shuffledNums[i], i);
+        var div = document.getElementById(i);
+        div.className = shuffledNums[i];
+        //assignPicsToDivs(shuffledNums[i], i);
     }
 }
 
+window.onload = generateBoard;
+
 // decides which pic to draw in the given div with id = num
 function assignPicsToDivs(randomNum, num) {
-    switch (randomNum) {
+    switch (parseInt(randomNum)) {
         case 0: drawZeroPic(num); break;
         case 1: drawFirstPic(num); break;
         case 2: drawSecondPic(num); break;
@@ -87,7 +93,7 @@ function assignPicsToDivs(randomNum, num) {
 
 function drawZeroPic(num) {
     //note
-    var paper = Raphael(document.getElementById("num"), 100, 140);
+    var paper = Raphael(document.getElementById(num), 100, 140);
     var rectA = paper.rect(0, 0, 100, 140);
 
     rectA.attr({
@@ -115,7 +121,7 @@ function drawZeroPic(num) {
 
 function drawFirstPic(num) {
     //heart
-    var paper = Raphael(document.getElementById("num"), 100, 140);
+    var paper = Raphael(document.getElementById(num), 100, 140);
     var rectB = paper.rect(0, 0, 100, 140);
 
     rectB.attr({
@@ -150,7 +156,7 @@ function drawFirstPic(num) {
 
 function drawSecondPic(num) {
     //house
-    var paper = Raphael(document.getElementById("num"), 100, 140);
+    var paper = Raphael(document.getElementById(num), 100, 140);
     var rectA = paper.rect(0, 0, 100, 140);
 
     rectA.attr({
@@ -180,7 +186,7 @@ function drawSecondPic(num) {
 
 function drawThirdPic(num) {
     //camera
-    var paper = Raphael(document.getElementById("num"), 100, 140);
+    var paper = Raphael(document.getElementById(num), 100, 140);
     var rectA = paper.rect(0, 0, 100, 140);
 
     rectA.attr({
@@ -210,7 +216,7 @@ function drawThirdPic(num) {
 
 function drawFourthPic(num) {
     //clock
-    var paper = Raphael(document.getElementById("num"), 100, 140);
+    var paper = Raphael(document.getElementById(num), 100, 140);
     var rectA = paper.rect(0, 0, 100, 140);
 
     rectA.attr({
@@ -264,7 +270,7 @@ function drawFourthPic(num) {
 
 function drawFifthPic(num) {
     //note
-    var paper = Raphael(document.getElementById("num"), 100, 140);
+    var paper = Raphael(document.getElementById(num), 100, 140);
     var rectA = paper.rect(0, 0, 100, 140);
 
     rectA.attr({
@@ -292,7 +298,7 @@ function drawFifthPic(num) {
 
 function drawSixthPic(num) {
     //heart
-    var paper = Raphael(document.getElementById("num"), 100, 140);
+    var paper = Raphael(document.getElementById(num), 100, 140);
     var rectB = paper.rect(0, 0, 100, 140);
 
     rectB.attr({
@@ -327,7 +333,7 @@ function drawSixthPic(num) {
 
 function drawSeventhPic(num) {
     //house
-    var paper = Raphael(document.getElementById("num"), 100, 140);
+    var paper = Raphael(document.getElementById(num), 100, 140);
     var rectA = paper.rect(0, 0, 100, 140);
 
     rectA.attr({
@@ -357,7 +363,7 @@ function drawSeventhPic(num) {
 
 function drawEighthPic(num) {
     //camera
-    var paper = Raphael(document.getElementById("num"), 100, 140);
+    var paper = Raphael(document.getElementById(num), 100, 140);
     var rectA = paper.rect(0, 0, 100, 140);
 
     rectA.attr({
@@ -387,7 +393,7 @@ function drawEighthPic(num) {
 
 function drawNinethPic(num) {
     //clock
-    var paper = Raphael(document.getElementById("num"), 100, 140);
+    var paper = Raphael(document.getElementById(num), 100, 140);
     var rectA = paper.rect(0, 0, 100, 140);
 
     rectA.attr({
