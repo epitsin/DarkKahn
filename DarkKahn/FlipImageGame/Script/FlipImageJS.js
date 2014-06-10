@@ -19,17 +19,17 @@ function flipCard(currentCard, imageName) {
             clearFlipped();
         } else {
 
-            sleep(3);
+            //sleep(3);
 
-            var element = flippedCardsUntilNow[0].getElementsByTagName('svg');
-            for (index = 0; index < element.length; index++) {
-                element[index].parentNode.removeChild(element[index]);
-            }
+            //var element = flippedCardsUntilNow[0].getElementsByTagName('svg');
+            //for (index = 0; index < element.length; index++) {
+            //    element[index].parentNode.removeChild(element[index]);
+            //}
 
-            element = flippedCardsUntilNow[1].getElementsByTagName('svg');
-            for (index = 0; index < element.length; index++) {
-                element[index].parentNode.removeChild(element[index]);
-            }
+            //element = flippedCardsUntilNow[1].getElementsByTagName('svg');
+            //for (index = 0; index < element.length; index++) {
+            //    element[index].parentNode.removeChild(element[index]);
+            //}
 
             //flippedCardsUntilNow[0].style.backgroundImage = 'url(images/default.jpg)'; // TO DO: change it when we have pictures
             //flippedCardsUntilNow[1].style.backgroundImage = 'url(images/default.jpg)'; // TO DO: change it when we have pictures
