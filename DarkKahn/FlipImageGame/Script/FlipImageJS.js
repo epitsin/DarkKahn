@@ -18,8 +18,21 @@ function flipCard(currentCard, imageName) {
             flippedCardsCount += 2;
             clearFlipped();
         } else {
-            flippedCardsUntilNow[0].style.backgroundImage = 'url(images/default.jpg)'; // TO DO: change it when we have pictures
-            flippedCardsUntilNow[1].style.backgroundImage = 'url(images/default.jpg)'; // TO DO: change it when we have pictures
+
+            sleep(3);
+
+            var element = flippedCardsUntilNow[0].getElementsByTagName('svg');
+            for (index = 0; index < element.length; index++) {
+                element[index].parentNode.removeChild(element[index]);
+            }
+
+            element = flippedCardsUntilNow[1].getElementsByTagName('svg');
+            for (index = 0; index < element.length; index++) {
+                element[index].parentNode.removeChild(element[index]);
+            }
+
+            //flippedCardsUntilNow[0].style.backgroundImage = 'url(images/default.jpg)'; // TO DO: change it when we have pictures
+            //flippedCardsUntilNow[1].style.backgroundImage = 'url(images/default.jpg)'; // TO DO: change it when we have pictures
             clearFlipped();
         }
 
@@ -27,6 +40,11 @@ function flipCard(currentCard, imageName) {
             // the game finishes
         }
     } 
+}
+
+function sleep(seconds) {
+    var e = new Date().getTime() + (seconds * 1000);
+    while (new Date().getTime() <= e) { }
 }
 
 // adds a new card to the array of currently flipped cards and a new image to the array of currently flipped images
