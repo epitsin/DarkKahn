@@ -28,7 +28,6 @@ body {
     display: inline-block;
     width: 150px;
     height: 40px;
-    margin: 10px;
     margin: 20px 0 10px 0;
     background-color: #008080;
     cursor: pointer;
@@ -60,4 +59,9 @@ body {
     background-color: #026873;
     background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%), linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%), linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%), linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
     background-size: 13px, 29px, 37px, 53px;
+}
+
+svg{
+    display:block;
+    margin: auto;
 }
