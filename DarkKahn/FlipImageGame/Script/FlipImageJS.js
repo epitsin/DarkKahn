@@ -1,12 +1,11 @@
-﻿var allCards = document.querySelectorAll('div');
-var flippedImagesUntilNow = []; // the array of images on flipped cards
-var flippedCardsUntilNow = []; // the array of flipped cards' ID-s
-var flippedCardsCount = 0; // all flipped cards until now 
+﻿allCards = document.querySelectorAll('div');
+flippedImagesUntilNow = []; // the array of images on flipped cards
+flippedCardsUntilNow = []; // the array of flipped cards' ID-s
+flippedCardsCount = 0; // all flipped cards until now 
 
 
 // the function is started when you click on a card
 function flipCard(currentCard, imageName) {
-    //currentCard.style.backgroundImage = 'url(images/' + imageName + '.jpg)'; // TO DO: change it when we have pictures
     assignPicsToDivs(currentCard.className, currentCard.id);
 
     if (flippedCardsUntilNow.length === 0) {
@@ -18,28 +17,29 @@ function flipCard(currentCard, imageName) {
             flippedCardsCount += 2;
             clearFlipped();
         } else {
-
-            //sleep(3);
-
-            //var element = flippedCardsUntilNow[0].getElementsByTagName('svg');
-            //for (index = 0; index < element.length; index++) {
-            //    element[index].parentNode.removeChild(element[index]);
-            //}
-
-            //element = flippedCardsUntilNow[1].getElementsByTagName('svg');
-            //for (index = 0; index < element.length; index++) {
-            //    element[index].parentNode.removeChild(element[index]);
-            //}
-
-            //flippedCardsUntilNow[0].style.backgroundImage = 'url(images/default.jpg)'; // TO DO: change it when we have pictures
-            //flippedCardsUntilNow[1].style.backgroundImage = 'url(images/default.jpg)'; // TO DO: change it when we have pictures
-            clearFlipped();
+            setTimeout(function () {
+                remove();
+                clearFlipped();
+            }, 1000);
         }
 
         if (flippedCardsCount === allCards.length) {
             // the game finishes
         }
     } 
+}
+
+function remove() {
+    var sth = flippedCardsUntilNow;
+    var element = sth[0].getElementsByTagName('svg');
+    for (index = 0; index < element.length; index++) {
+        element[index].parentNode.removeChild(element[index]);
+    }
+
+    element = sth[1].getElementsByTagName('svg');
+    for (index = 0; index < element.length; index++) {
+        element[index].parentNode.removeChild(element[index]);
+    }
 }
 
 function sleep(seconds) {
@@ -49,7 +49,6 @@ function sleep(seconds) {
 
 // adds a new card to the array of currently flipped cards and a new image to the array of currently flipped images
 function addNewCardToFlipped(currentCard) {
-    //flippedImagesUntilNow.push(image);
     flippedCardsUntilNow.push(currentCard);
 }
 
