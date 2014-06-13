@@ -23,10 +23,15 @@ function flipCard(currentCard, imageName) {
             }, 1000);
         }
 
-        if (flippedCardsCount === allCards.length) {
-            // the game finishes
+        if (flippedCardsCount === 20) {
+            alert("CONGRATULATIONS, YOU WON! LET'S PLAY AGAIN!");
+            reload();
         }
     } 
+}
+
+function reload() {
+    location.reload(true);
 }
 
 function remove() {
