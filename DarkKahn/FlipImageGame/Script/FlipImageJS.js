@@ -3,6 +3,8 @@ allCards = document.querySelectorAll('div');
 flippedImagesUntilNow = []; // the array of images on flipped cards
 flippedCardsUntilNow = []; // the array of flipped cards' ID-s
 flippedCardsCount = 0; // all flipped cards until now 
+sameImagesFlippedSound = new Sound('same.mp3', 100, false);
+differentImagesFlippedSound = new Sound('different.mp3', 100, false);
 
 // the function is started when you click on a card
 function flipCard(currentCard, imageName) {
@@ -14,9 +16,11 @@ function flipCard(currentCard, imageName) {
         addNewCardToFlipped(currentCard);
 
         if (flippedCardsUntilNow[0].className === flippedCardsUntilNow[1].className) {
+            sameImagesFlippedSound.start();
             flippedCardsCount += 2;
             clearFlipped();
         } else {
+            differentImagesFlippedSound.start();
             setTimeout(function () {
                 removeDrawnPics();
                 clearFlipped();
