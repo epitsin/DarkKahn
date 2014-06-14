@@ -65,8 +65,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClockPage.html" />
     <Content Include="Css\FlipImageStyleSheet.css" />
     <Content Include="FlipImageGame.html" />
+    <Content Include="Script\ClockScript.js" />
     <Content Include="Script\FlipImageJS.js" />
     <Content Include="Web.config" />
   </ItemGroup>
