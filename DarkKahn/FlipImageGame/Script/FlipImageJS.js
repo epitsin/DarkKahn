@@ -1,8 +1,8 @@
-﻿allCards = document.querySelectorAll('div');
+﻿startClock();
+allCards = document.querySelectorAll('div');
 flippedImagesUntilNow = []; // the array of images on flipped cards
 flippedCardsUntilNow = []; // the array of flipped cards' ID-s
 flippedCardsCount = 0; // all flipped cards until now 
-startClock();
 
 
 
@@ -400,7 +400,7 @@ function startClock () {
     mem = {};
     mouse = { x: -10, y: -10, down: false };
     cvs = document.createElement('canvas');
-    cvs.width = W = 240;
+    cvs.width = W = 1040;
     cvs.height = H = 80;
     (function appendCanvas() {
         if (document.body) document.body.appendChild(cvs);
@@ -421,7 +421,7 @@ function startClock () {
         delete mem[o.id];
     };
     function StopWatch() {
-        var started = false,
+        var started = true,
             time = [[0], [0, 0], [0, 0], [0, 0]];
         this.run = function () {
             var output,
@@ -446,42 +446,16 @@ function startClock () {
             output = h[0] + ':' + m[0] + m[1] + ':' + s[0] + s[1] + '.' + ms[0] + ms[1];
             ctx.fillText(output, W / 2, 20);
         };
-        this.start = function () {
-            started = true;
-        };
-        this.stop = function () {
-            started = false;
-        };
-        this.reset = function () {
-            remove(this);
-            new StopWatch();
-        }
-        add(this);
+        add(this);        
     };
+
     function Button(x, y, t) {
         var x = x, y = y, w = 60, h = 30, t = t;
         this.run = function () {
             ctx.font = 'bold 16px monospace';
             ctx.textBaseline = 'middle';
             ctx.textAlign = 'center';
-            ctx.beginPath();//begin mouse detection
-            ctx.rect(x, y, w, h);
-            if (ctx.isPointInPath(mouse.x, mouse.y)) {
-                ctx.fillStyle = '#eee';
-                if (mouse.down) {
-                    for (var i in mem) {
-                        if (mem[i].constructor.name == 'StopWatch') {
-                            if (t == 'START') mem[i].start();
-                            if (t == 'STOP') mem[i].stop();
-                            if (t == 'RESET') mem[i].reset();
-                            if (t == 'CLOSE') document.body.removeChild(cvs);
-                        }
-                    }
-                }
-            } else {
-                ctx.fillStyle = '#fff';
-            }
-            ctx.closePath();//end mouse detection
+            ctx.rect(x, y, w, h);           
             ctx.fillRect(x, y, w, h);
             ctx.fillStyle = '#000';
             ctx.fillText(t, x + w / 2, y + h / 2);
@@ -489,25 +463,12 @@ function startClock () {
         add(this);
     };
     (function init() {
-        new StopWatch();
-        new Button(0, 50, 'START');
-        new Button(60, 50, 'STOP');
-        new Button(120, 50, 'RESET');
-        new Button(180, 50, 'CLOSE');
+        new StopWatch();        
     })();
-    (function loop() {
+    (function loop() {        
         var a
         ctx.clearRect(0, 0, W, H);
-        for (a in mem) if (mem.hasOwnProperty(a)) mem[a].run();
+        for (a in mem) if (mem.hasOwnProperty(a)) mem[a].run();        
         setTimeout(loop, 1000 / 100);
     })();
-    cvs.onmousemove = function (e) {
-        mouse.x = (e.pageX || e.clientX || e.offsetX) - cvs.offsetLeft;
-        mouse.y = (e.pageY || e.clientY || e.offsetY) - cvs.offsetTop;
-        return false;
-    };
-    cvs.onmousedown = cvs.onmouseup = function (e) {
-        mouse.down = e.type == 'mousedown';
-        return false;
-    };
 };
