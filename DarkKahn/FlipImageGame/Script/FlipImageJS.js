@@ -405,13 +405,13 @@ function startClock () {
     mem = {};
     mouse = { x: -10, y: -10, down: false };
     cvs = document.createElement('canvas');
-    cvs.style.position = 'absolute'
+    cvs.style.position = 'fixed'
     cvs.style.left = "-350px";
     cvs.style.top = "20px";
     cvs.width = W = 1040;
     cvs.height = H = 80;
     (function appendCanvas() {
-        if (document.body) document.getElementById('wrapper').appendChild(cvs);
+        if (document.body) document.body.appendChild(cvs);
         else setTimeout(appendCanvas, 100);
     })();
     ctx = cvs.getContext('2d');
