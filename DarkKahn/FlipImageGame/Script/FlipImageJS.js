@@ -4,8 +4,6 @@ flippedImagesUntilNow = []; // the array of images on flipped cards
 flippedCardsUntilNow = []; // the array of flipped cards' ID-s
 flippedCardsCount = 0; // all flipped cards until now 
 
-
-
 // the function is started when you click on a card
 function flipCard(currentCard, imageName) {
     assignPicsToDivs(currentCard.className, currentCard.id);
@@ -20,7 +18,7 @@ function flipCard(currentCard, imageName) {
             clearFlipped();
         } else {
             setTimeout(function () {
-                remove();
+                removeDrawnPics();
                 clearFlipped();
             }, 1000);
         }
@@ -32,11 +30,13 @@ function flipCard(currentCard, imageName) {
     } 
 }
 
+//reloads the whole screen
 function reload() {
     location.reload(true);
 }
 
-function remove() {
+//removes the drawn pictures if they are not the same
+function removeDrawnPics() {
     var sth = flippedCardsUntilNow;
     var element = sth[0].getElementsByTagName('svg');
     for (index = 0; index < element.length; index++) {
@@ -49,6 +49,7 @@ function remove() {
     }
 }
 
+//if the turned pictures are not the same waits for 1 second
 function sleep(seconds) {
     var e = new Date().getTime() + (seconds * 1000);
     while (new Date().getTime() <= e) { }
