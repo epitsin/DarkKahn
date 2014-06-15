@@ -14,9 +14,12 @@ function flipCard(currentCard, imageName) {
         addNewCardToFlipped(currentCard);
     } else if (flippedCardsUntilNow.length === 1) {
         addNewCardToFlipped(currentCard);
-
+        
         if (flippedCardsUntilNow[0].className === flippedCardsUntilNow[1].className) {
             sameImagesFlippedSound.start();
+
+            enlargePic();
+
             flippedCardsCount += 2;
             clearFlipped();
         } else {
@@ -119,6 +122,33 @@ function assignPicsToDivs(randomNum, num) {
         case 9: drawNinethPic(num); break;
     }
 }
+
+function enlargePic() {
+    var $samePics = $('.' + flippedCardsUntilNow[0].className);
+    for (var i = 0; i < $samePics.length; i++) {
+       // console.log($samePics);
+        $samePics.enlarge();
+    }
+}
+
+(function ($) {
+    $.fn.enlarge = function () {
+        var $this = $(this);
+
+        $this.animate({
+            height: ($(this).height() * 0.5),
+            width: ($(this).width() * 0.5)
+        }, 1000);
+
+        $this.animate({
+            height: ($(this).height() * 1),
+            width: ($(this).width() * 1)
+        }, 1000);
+
+    }
+}(jQuery));
+
+// DRAWING PICTURES
 
 // heart_
 function drawZeroPic(num) {
@@ -400,6 +430,8 @@ function drawNinethPic(num) {
     );
 }
 
+
+//DRAWING THE CLOCK
 function startClock () {
     var cvs, ctx, W, H, mem, StopWatch, Button, mouse;
     mem = {};
@@ -481,6 +513,7 @@ function startClock () {
     })();
 };
 
+//IMPLEMENTING SOUND
 function Sound(source, volume, loop) {
     this.source = source;
     this.volume = volume;

@@ -68,9 +68,10 @@
     <Content Include="ClockPage.html" />
     <Content Include="Css\FlipImageStyleSheet.css" />
     <Content Include="FlipImageGame.html" />
+    <Content Include="Script\jquery-1.11.1.js" />
     <Content Include="Script\ClockScript.js" />
     <Content Include="Script\FlipImageJS.js" />
-    <Content Include="Script\sound.js" />
+    <Content Include="Script\jquery-2.1.1.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
