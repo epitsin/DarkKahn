@@ -70,6 +70,7 @@
     <Content Include="FlipImageGame.html" />
     <Content Include="Script\ClockScript.js" />
     <Content Include="Script\FlipImageJS.js" />
+    <Content Include="Script\sound.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
