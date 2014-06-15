@@ -137,22 +137,17 @@ function enlargePic() {
         var $this = $(this);
 
         $this.animate({
-            height: ($(this).height() * 0.5),
-            width: ($(this).width() * 0.5)
+            height: ("toggle"),
+            width: ("toggle")
         }, 1000);
 
         $this.animate({
-            height: ($(this).height() * 1),
-            width: ($(this).width() * 1)
+            height: ("toggle"),
+            width: ("toggle")
         }, 1000);
 
     }
 }(jQuery));
-
-//$('.column > div').on('click', function () {
-//    var $this = $(this);
-//    $this.css(' -webkit-transform', 'perspective(800) rotateY(-180deg');
-//});
 
 // DRAWING PICTURES
 
