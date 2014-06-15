@@ -123,16 +123,17 @@ function assignPicsToDivs(randomNum, num) {
     }
 }
 
+//picks the same cards and makes them smaller and than large again 2 times
 function enlargePic() {
     var $samePics = $('.' + flippedCardsUntilNow[0].className);
     for (var i = 0; i < $samePics.length; i++) {
-       // console.log($samePics);
-        $samePics.enlarge();
+        $samePics.resize();
     }
 }
 
+//the function which resizes the pictures
 (function ($) {
-    $.fn.enlarge = function () {
+    $.fn.resize = function () {
         var $this = $(this);
 
         $this.animate({
