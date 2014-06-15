@@ -149,6 +149,11 @@ function enlargePic() {
     }
 }(jQuery));
 
+//$('.column > div').on('click', function () {
+//    var $this = $(this);
+//    $this.css(' -webkit-transform', 'perspective(800) rotateY(-180deg');
+//});
+
 // DRAWING PICTURES
 
 // heart_
