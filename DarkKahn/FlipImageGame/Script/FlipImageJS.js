@@ -1,10 +1,12 @@
 ﻿startClock();
-allCards = document.querySelectorAll('div');
-flippedImagesUntilNow = []; // the array of images on flipped cards
-flippedCardsUntilNow = []; // the array of flipped cards' ID-s
-flippedCardsCount = 0; // all flipped cards until now 
-sameImagesFlippedSound = new Sound('Sounds/same.mp3', 100, false);
-differentImagesFlippedSound = new Sound('Sounds/different.mp3', 100, false);
+var allCards = document.querySelectorAll('div'),
+    flippedImagesUntilNow = [], // the array of images on flipped cards
+    flippedCardsUntilNow = [], // the array of flipped cards' ID-s
+    flippedCardsCount = 0, // all flipped cards until now 
+    sameImagesFlippedSound = new Sound('Sounds/same.mp3', 100, false),
+    sameIvoImagesFlippedSound = new Sound('Sounds/siren.mp3', 100, false),
+    differentImagesFlippedSound = new Sound('Sounds/different.mp3', 100, false),
+    ivoImageId = 0;
 
 // the function is started when you click on a card
 function flipCard(currentCard, imageName) {
@@ -16,11 +18,26 @@ function flipCard(currentCard, imageName) {
         addNewCardToFlipped(currentCard);
         
         if (flippedCardsUntilNow[0].className === flippedCardsUntilNow[1].className) {
-            sameImagesFlippedSound.start();
+            if (flippedCardsUntilNow[0].id == ivoImageId || flippedCardsUntilNow[1].id == ivoImageId) {
+                var divOnTop = document.createElement('div');
+                divOnTop.classList.add('blink');
+                divOnTop.style.height = '100%';
+                divOnTop.style.width = '100%';
+                divOnTop.style.position = 'absolute';
+                divOnTop.style.top = '0';
+                divOnTop.style.backgroundColor = '#627BAE';
+                divOnTop.style.zIndex = '1000';
+                document.body.appendChild(divOnTop);
 
-            enlargePic();
-            flippedCardsCount += 2;
-            clearFlipped();
+                sameIvoImagesFlippedSound.start();
+                blink();
+            }
+            else {
+                sameImagesFlippedSound.start();
+                enlargePic();
+                flippedCardsCount += 2;
+                clearFlipped();
+            }
         } else {
             differentImagesFlippedSound.start();
             setTimeout(function () {
@@ -100,7 +117,6 @@ function generateBoard() {
     for (var i = 0; i < shuffledNums.length; i++) {
         var div = document.getElementById(i);
         div.className = shuffledNums[i];
-        //assignPicsToDivs(shuffledNums[i], i);
     }
 }
 
@@ -159,15 +175,27 @@ function enlargePic() {
     }
 }(jQuery));
 
+function blink() {
+    setInterval(function () {
+        $(".blink").css("background-color", function () {
+            this.switch = !this.switch
+            return this.switch ? "red" : ""
+        });
+    }, 100)
+}
+
 // DRAWING PICTURES
 
 // Ivo
 function drawZeroPic(num) {
+    ivoImageId = num;
+
     var paper = Raphael(document.getElementById(num), 80, 120);
 
     var rectangle = paper.rect(0, 0, 80, 120);
 
     var img = paper.image('Images/ivo.jpg', 0, 0, 80, 120);
+
 }
 
 // joystick_
