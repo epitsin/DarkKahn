@@ -19,14 +19,18 @@ function flipCard(currentCard, imageName) {
         
         if (flippedCardsUntilNow[0].className === flippedCardsUntilNow[1].className) {
             if (flippedCardsUntilNow[0].id == ivoImageId || flippedCardsUntilNow[1].id == ivoImageId) {
+                var message = document.createElement('h1');
+                message.innerText += "Unhandled Exception: System.StackOverflowException: You'll never win against the trainers!";
+                message.style.margin = '200px';
                 var divOnTop = document.createElement('div');
                 divOnTop.classList.add('blink');
                 divOnTop.style.height = '100%';
                 divOnTop.style.width = '100%';
                 divOnTop.style.position = 'absolute';
                 divOnTop.style.top = '0';
-                divOnTop.style.backgroundColor = '#627BAE';
                 divOnTop.style.zIndex = '1000';
+                divOnTop.style.color = 'black';
+                divOnTop.appendChild(message);
                 document.body.appendChild(divOnTop);
 
                 sameIvoImagesFlippedSound.start();
@@ -184,30 +188,9 @@ function blink() {
     }, 100)
 }
 
-// DRAWING PICTURES
+ //DRAWING PICTURES
 
-//// Ivo
-//function drawZeroPic(num) {
-//    ivoImageId = num;
-
-//    var paper = Raphael(document.getElementById(num), 80, 120);
-
-//    var rectangle = paper.rect(0, 0, 80, 120);
-
-//    var img = paper.image('Images/ivo.jpg', 0, 0, 80, 120);
-
-//    rectangle.attr(
-//        {
-//            "stroke-width": 0
-//        }
-//    );
-
-//    var radius = 10;
-
-//    var img = paper.image('Images/ivo.png', 1, 0, 82, 121, radius);
-//}
-
-// Doncho
+// Ivo
 function drawZeroPic(num) {
     ivoImageId = num;
 
@@ -215,18 +198,39 @@ function drawZeroPic(num) {
 
     var rectangle = paper.rect(0, 0, 80, 120);
 
-    var img = paper.image('Images/doncho.jpg', 0, 0, 80, 120);
+    var img = paper.image('Images/ivo.jpg', 0, 0, 80, 120);
 
-    //rectangle.attr(
-    //    {
-    //        "stroke-width": 0
-    //    }
-    //);
+    rectangle.attr(
+        {
+            "stroke-width": 0
+        }
+    );
 
-    //var radius = 10;
+    var radius = 10;
 
-    //var img = paper.image('Images/ivo.png', 1, 0, 82, 121, radius);
+    var img = paper.image('Images/ivo.png', 1, 0, 82, 121, radius);
 }
+
+//// Doncho
+//function drawZeroPic(num) {
+//    ivoImageId = num;
+
+//    var paper = Raphael(document.getElementById(num), 80, 120);
+
+//    var rectangle = paper.rect(0, 0, 80, 120);
+
+//    var img = paper.image('Images/doncho.jpg', 0, 0, 80, 120);
+
+//    //rectangle.attr(
+//    //    {
+//    //        "stroke-width": 0
+//    //    }
+//    //);
+
+//    //var radius = 10;
+
+//    //var img = paper.image('Images/ivo.png', 1, 0, 82, 121, radius);
+//}
 
 // joystick_
 function drawFirstPic(num) {
