@@ -67,7 +67,10 @@
   <ItemGroup>
     <Content Include="ClockPage.html" />
     <Content Include="Css\FlipImageStyleSheet.css" />
+    <Content Include="fireworks.js" />
     <Content Include="FlipImageGame.html" />
+    <Content Include="FlipImageStyleSheet.css" />
+    <Content Include="requestanimframe.js" />
     <Content Include="Script\jquery-1.11.1.js" />
     <Content Include="Script\ClockScript.js" />
     <Content Include="Script\FlipImageJS.js" />
