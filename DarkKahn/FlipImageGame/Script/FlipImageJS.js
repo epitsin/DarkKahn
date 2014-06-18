@@ -151,35 +151,13 @@ function enlargePic() {
 
 // DRAWING PICTURES
 
-// heart_
+// Ivo
 function drawZeroPic(num) {
     var paper = Raphael(document.getElementById(num), 80, 120);
-    var favorite = paper.set();
 
-    favorite.attr({
-        'id': 'favorite',
-        'name': 'favorite'
-    });
+    var rectangle = paper.rect(0, 0, 80, 120);
 
-    var groupA = paper.set();
-
-    var pathB = paper.path("M54.697,29.515c0.904,0,1.868,0.049,2.897,0.149c6.271,0.612,13.521,6.353,14.404,17.353v3.661    c-0.821,10.528-8.771,23.515-32,39.808C16.77,74.192,8.823,61.206,8,50.678v-3.661c0.883-11,8.133-16.74,14.402-17.353    c1.03-0.101,1.994-0.149,2.898-0.149c7.244,0,10.72,3.131,14.698,7.872C43.979,32.646,47.451,29.515,54.697,29.515 M54.697,36.515    c-4.162,0-5.899,1.275-9.335,5.372L40,48.276l-5.363-6.39c-3.438-4.097-5.174-5.372-9.336-5.372c-0.682,0-1.428,0.039-2.219,0.116    c-2.894,0.283-7.396,3.364-8.082,10.687v3.063c0.852,9.196,9.255,19.77,24.999,31.472c15.745-11.703,24.149-22.277,25-31.472    v-3.063c-0.688-7.323-5.189-10.405-8.084-10.688C56.124,36.554,55.378,36.515,54.697,36.515L54.697,36.515z").attr({
-        parent: 'favorite',
-        'stroke-width': '0',
-        'stroke-opacity': '1',
-        'fill': '#000000'
-    }).data('id', 'pathB');
-
-    groupA.attr({
-        'parent': 'favorite',
-        'name': 'groupA'
-    });
-
-    var rsrGroups = [favorite, groupA];
-    favorite.push();
-    groupA.push(
-        pathB
-    );
+    var img = paper.image('ivo.jpg', 0, 0, 80, 120);
 }
 
 // joystick_
@@ -346,7 +324,6 @@ function drawSixthPic(num) {
 
 // autospeaker
 function drawSeventhPic(num) {
-    //house
     var paper = Raphael(document.getElementById(num), 80, 120);
     var Announcement = paper.set();
 
