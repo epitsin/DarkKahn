@@ -217,15 +217,15 @@ function drawZeroPic(num) {
 
 //    var rectangle = paper.rect(0, 0, 80, 120);
 
-//    //rectangle.attr(
-//    //    {
-//    //        "stroke-width": 0
-//    //    }
-//    //);
+//    rectangle.attr(
+//        {
+//            "stroke-width": 0
+//        }
+//    );
 
-//    //var radius = 10;
+//    var radius = 10;
 
-//    //var img = paper.image('Images/ivo.png', 1, 0, 82, 121, radius);
+//    var img = paper.image('Images/doncho.jpg', 1, 0, 82, 121, radius);
 //}
 
 // joystick_
