@@ -3,8 +3,8 @@ allCards = document.querySelectorAll('div');
 flippedImagesUntilNow = []; // the array of images on flipped cards
 flippedCardsUntilNow = []; // the array of flipped cards' ID-s
 flippedCardsCount = 0; // all flipped cards until now 
-sameImagesFlippedSound = new Sound('same.mp3', 100, false);
-differentImagesFlippedSound = new Sound('different.mp3', 100, false);
+sameImagesFlippedSound = new Sound('Sounds/same.mp3', 100, false);
+differentImagesFlippedSound = new Sound('Sounds/different.mp3', 100, false);
 
 // the function is started when you click on a card
 function flipCard(currentCard, imageName) {
@@ -19,7 +19,6 @@ function flipCard(currentCard, imageName) {
             sameImagesFlippedSound.start();
 
             enlargePic();
-
             flippedCardsCount += 2;
             clearFlipped();
         } else {
@@ -126,9 +125,11 @@ function assignPicsToDivs(randomNum, num) {
 //picks the same cards and makes them smaller and than large again 2 times
 function enlargePic() {
     var $samePics = $('.' + flippedCardsUntilNow[0].className);
-    for (var i = 0; i < $samePics.length; i++) {
+    for (var i = 0; i < 2; i++) {
         $samePics.resize();
     }
+
+    $samePics.explode();
 }
 
 //the function which resizes the pictures
@@ -149,6 +150,15 @@ function enlargePic() {
     }
 }(jQuery));
 
+//the function which explodes the pictures
+(function ($) {
+    $.fn.explode = function () {
+        var $this = $(this);
+
+        $this.toggle("explode");
+    }
+}(jQuery));
+
 // DRAWING PICTURES
 
 // Ivo
@@ -157,7 +167,7 @@ function drawZeroPic(num) {
 
     var rectangle = paper.rect(0, 0, 80, 120);
 
-    var img = paper.image('ivo.jpg', 0, 0, 80, 120);
+    var img = paper.image('Images/ivo.jpg', 0, 0, 80, 120);
 }
 
 // joystick_
