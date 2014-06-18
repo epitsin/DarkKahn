@@ -198,8 +198,6 @@ function drawZeroPic(num) {
 
     var rectangle = paper.rect(0, 0, 80, 120);
 
-    var img = paper.image('Images/ivo.jpg', 0, 0, 80, 120);
-
     rectangle.attr(
         {
             "stroke-width": 0
@@ -218,8 +216,6 @@ function drawZeroPic(num) {
 //    var paper = Raphael(document.getElementById(num), 80, 120);
 
 //    var rectangle = paper.rect(0, 0, 80, 120);
-
-//    var img = paper.image('Images/doncho.jpg', 0, 0, 80, 120);
 
 //    //rectangle.attr(
 //    //    {
