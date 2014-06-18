@@ -186,7 +186,28 @@ function blink() {
 
 // DRAWING PICTURES
 
-// Ivo
+//// Ivo
+//function drawZeroPic(num) {
+//    ivoImageId = num;
+
+//    var paper = Raphael(document.getElementById(num), 80, 120);
+
+//    var rectangle = paper.rect(0, 0, 80, 120);
+
+//    var img = paper.image('Images/ivo.jpg', 0, 0, 80, 120);
+
+//    rectangle.attr(
+//        {
+//            "stroke-width": 0
+//        }
+//    );
+
+//    var radius = 10;
+
+//    var img = paper.image('Images/ivo.png', 1, 0, 82, 121, radius);
+//}
+
+// Doncho
 function drawZeroPic(num) {
     ivoImageId = num;
 
@@ -194,17 +215,17 @@ function drawZeroPic(num) {
 
     var rectangle = paper.rect(0, 0, 80, 120);
 
-    var img = paper.image('Images/ivo.jpg', 0, 0, 80, 120);
+    var img = paper.image('Images/doncho.jpg', 0, 0, 80, 120);
 
-    rectangle.attr(
-        {
-            "stroke-width": 0
-        }
-    );
+    //rectangle.attr(
+    //    {
+    //        "stroke-width": 0
+    //    }
+    //);
 
-    var radius = 10;
+    //var radius = 10;
 
-    var img = paper.image('Images/ivo.png', 1, 0, 82, 121, radius);
+    //var img = paper.image('Images/ivo.png', 1, 0, 82, 121, radius);
 }
 
 // joystick_
