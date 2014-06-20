@@ -3,9 +3,9 @@ var allCards = document.querySelectorAll('div'),
     flippedImagesUntilNow = [], // the array of images on flipped cards
     flippedCardsUntilNow = [], // the array of flipped cards' ID-s
     flippedCardsCount = 0, // all flipped cards until now 
-    sameImagesFlippedSound = new Sound('Sounds/same.mp3', 100, false),
-    sameIvoImagesFlippedSound = new Sound('Sounds/siren.mp3', 100, false),
-    differentImagesFlippedSound = new Sound('Sounds/different.mp3', 100, false),
+    sameImagesFlippedSound = new Sound('Sounds/same.mp3', 100, false), // the sound that starts if you flip 2 identical cards
+    sameIvoImagesFlippedSound = new Sound('Sounds/siren.mp3', 100, false), // the sound that starts if you flip 2 different cards
+    differentImagesFlippedSound = new Sound('Sounds/different.mp3', 100, false), // the sound that starts if you flip 2 photos of Ivo
     ivoImageId = 0;
 
 // the function is started when you click on a card
@@ -170,7 +170,7 @@ function enlargePic() {
     }
 }(jQuery));
 
-//the function which explodes the pictures
+//the function which explodes the pictures if theyare the same
 (function ($) {
     $.fn.explode = function () {
         var $this = $(this);
@@ -179,6 +179,7 @@ function enlargePic() {
     }
 }(jQuery));
 
+//the function which makes the big div blink
 function blink() {
     setInterval(function () {
         $(".blink").css("background-color", function () {
@@ -208,25 +209,6 @@ function drawZeroPic(num) {
 
     var img = paper.image('Images/ivo.png', 1, 0, 82, 121, radius);
 }
-
-//// Doncho
-//function drawZeroPic(num) {
-//    ivoImageId = num;
-
-//    var paper = Raphael(document.getElementById(num), 80, 120);
-
-//    var rectangle = paper.rect(0, 0, 80, 120);
-
-//    rectangle.attr(
-//        {
-//            "stroke-width": 0
-//        }
-//    );
-
-//    var radius = 10;
-
-//    var img = paper.image('Images/doncho.jpg', 1, 0, 82, 121, radius);
-//}
 
 // joystick_
 function drawFirstPic(num) {
